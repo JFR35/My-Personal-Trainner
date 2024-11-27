@@ -3,7 +3,7 @@
 :root {
     /* Colors */
     --bg-general-color: #f4f4f9;
-    --bg-color-trans: rgba(255, 255, 255, 0.3);
+    --bg-color-trans: rgba(255, 255, 255, 0.7);
     --text-color: #f9f9f9;
     --text-color-dark: #222;
     --bg-header-footer-color: rgba(255, 255, 255, 0.9);
@@ -19,6 +19,7 @@
     --container-padding: 2rem;
     --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     --border-radius: 6px;
+    --: 2rem;
 
     /* Buttons */
     --btn-bg: #6e99d9;
@@ -28,7 +29,5 @@
     --btn-border-radius: 10px;
     --btn-transition: background-color 0.3s ease, transform 0.3s ease;
 
-    /* Misc */
-    --gap: 2rem;
 }
 

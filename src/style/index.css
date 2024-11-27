@@ -1,62 +1,85 @@
-/* Main container */
-
 .main-container {
-    border:1px solid black;
-    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-rows: auto 1fr 1.5rem;
+    gap: var(--gap);
+    width: 100%;
+    max-width: var(--container-max-width); 
     padding: var(--container-padding);
 }
 
-/* Grid container for responsive layout */
+/* Grid Layout for Cards */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--gap);
-    margin: 0 auto;
-    max-width: var(--container-max-width);
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-/* Card Styles */
 .card {
-    padding: var(--container-padding);
-    color: var(--text-color-dark);
-    border-radius: var(--border-radius);
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    overflow: hidden;
-    display: grid;
-    gap: var(--gap);
-    align-content: center;
-    background-color: var(--bg-color-trans);
+    transition: transform 0.2s, box-shadow 0.2s;
+    color: var(--text-color-dark);
+
 }
 
-/* Header and footer */
+.card h2 {
+    margin-bottom: 1rem;
+}
+
+.card p {
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
 .header, .footer {
-    color: var(--text-color-dark);
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: var(--border-radius);
+    padding: 1rem 2rem;
+    width: 90%;
     text-align: center;
-
+    color: var(--text-color);
 }
 
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
-    .grid-container {
-        grid-template-columns: 1fr;
+    .card h2 {
+        font-size: 1.4rem;
+    }
+
+    .card p {
+        font-size: 1.2em;
+    }
+
+    .card button {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header h1 {
+        font-size: 1rem;
     }
 
     .card {
         padding: 1rem;
     }
-}
 
-@media (max-width: 480px) {
-    .header h1 {
+    .card h2 {
         font-size: 1.2rem;
     }
 
-    .footer p {
+    .card p {
         font-size: 0.9rem;
     }
 }
