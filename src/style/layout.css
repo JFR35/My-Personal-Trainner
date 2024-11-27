@@ -1,0 +1,111 @@
+
+/* Reset Styles */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: var(--font-family);
+    text-align: center;
+    color: var(--text-color);
+    /* Interesante ir viendo esto ya que sirve de referencia en el uso
+    de REM O EM en el resto de unidades de medida relativas
+    PX ideal para tamaños fijos(estaticos)
+    % Se adaptan al tamaño del contenedor padre
+    EM Se adapta al tamaño del contenedor padre
+    REM para body y html 
+    font-size: 62.5%; /* Esto hace que 1rem = 10px (16px * 62.5%)
+    */
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    border-radius: var(--border-radius);
+}
+
+button {
+    padding: var(--btn-padding);
+    background-color: var(--btn-bg);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    color: var(--text-color);
+    font-size: var(--font-size);
+    cursor: var(--btn-cursor);
+    transition: var(--btn-transition);
+    width: 90%;
+}
+
+
+button:hover {
+    background-color: var(--btn-bg-hover);
+    transform: translateY(-2px);
+}
+
+
+.form {
+    background-color: var(--bg-color-trans);
+    border-radius: var(--btn-border-radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.form h1 {
+    margin-bottom: 1rem;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 0.7rem;
+}
+
+.form input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form input:focus {
+    border-color: var(--text-color-dark);
+    outline: none;
+}
+
+.form button {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--btn-bg);
+    border-radius: var(--btn-border-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.form button:hover {
+    background-color: var(--btn-bg-hover);
+}
+
+
+/* Background Image */
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+

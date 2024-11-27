@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/public/img/pexels-photo-332835.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/register.css">
+</head>
+
+<body>
+    <img src="/public/img/pexels-photo-332835.jpeg" alt="Fondo" class="background-image" aria-hidden="true">
+
+    <main class="container">
+        <section class="form" aria-labelledby="RegisterForm">
+            <form id="registroForm">
+                <h1>Regístrame</h1>
+                <label for="nombre">Nombre completo</label>
+                <input type="text" id="nombre" placeholder="Nombre completo" required minlength="3">
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" placeholder="Correo electrónico" required>
+
+                <label for="altura">Altura (cm)</label>
+                <input type="number" id="altura" placeholder="Altura (cm)" required>
+
+                <label for="peso">Peso (kg)</label>
+                <input type="number" id="peso" placeholder="Peso (kg)" required>
+
+                <label for="edad">Edad</label>
+                <input type="number" id="edad" placeholder="Edad" required>
+
+                <label for="usuario">Nombre de Usuario</label>
+                <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
+                <div id="error-usuario" class="error-message"></div>
+
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
+                <div id="error-contrasenia" class="error-message"></div>
+
+                <button type="submit">Registrarme</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024. Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="js/views/adduserview.js"></script>
+
+</body>
+
+</html>

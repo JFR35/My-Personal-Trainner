@@ -1,0 +1,51 @@
+
+
+
+.container {
+    color: var(--text-color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.error-message {
+    display: none; /* oculto si no hay error */
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: red;
+    margin-top: 0.3rem;
+    margin-bottom: 1.3rem;
+
+}
+.error-message.visible {
+    display: block; /* Muestra el mensaje cuando tiene la clase 'visible' */
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0;
+
+        .form {
+            padding: 1.2rem;
+            max-width: 90%;
+        }
+
+        .form h1 {
+            font-size: 1.5rem;
+        }
+
+        .form input {
+            padding: 0.6rem;
+        }
+
+        .form button {
+            width: 80%;
+            padding: 0.9rem;
+        }
+    }
+}
