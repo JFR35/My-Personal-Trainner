@@ -1,5 +1,5 @@
-import { obtenerDatosForm } from "../services/dom/domhandlerregister.js";
-import { validarCamposVacios, mostrarMensajeError } from "../utils/validations.js";
+import { getDataForm } from "../services/dom/domhandlerlogin.js";
+import { validateEmptyFields } from "../utils/validations.js";
 
 // Función para mostrar una alerta al iniciar sesión con éxito.
 function mostrarAlert() {
@@ -16,8 +16,9 @@ function compararContraLocalStorage(event) {
     event.preventDefault();
 
     // Obtener las credenciales del formulario
-    const credenciales = obtenerDatosForm(event);
-    if (!validarCamposVacios(credenciales)) {
+    const credenciales = getDataForm(event);
+    if (!validateEmptyFields(credenciales)) {
+        alert('Por favor, completa todos los campos.');
         return;
     }
 
@@ -30,7 +31,7 @@ function compararContraLocalStorage(event) {
 
     // Verificar si las credenciales coinciden con algún usuario guardado
     const credencialesCorrectas = usersaved.some(user => 
-        user.usuario === credenciales.name && user.contrasenia === credenciales.password
+        user.username === credenciales.username && user.password === credenciales.password
     );
 
     if (credencialesCorrectas) {
@@ -41,5 +42,5 @@ function compararContraLocalStorage(event) {
     }
 }
 
-// Cambiar el evento de 'click' a 'submit'
+// Agregar el evento al formulario
 document.getElementById('login-form').addEventListener('submit', compararContraLocalStorage);

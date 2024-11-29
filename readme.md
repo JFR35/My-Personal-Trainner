@@ -1,13 +1,13 @@
-# README - Aplicación de Gestión de Entrenamientos
+# README - Aplicación de Gestión de Entrenamientos My Personal Trainner
 
 ## Descripción
-Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funciones como iniciar sesión, añadir entrenamientos y ver resúmenes. Está construida con **HTML, CSS y JavaScript puro** y sigue la arquitectura **MVC (Modelo-Vista-Controlador)** para un código modular y fácil de mantener y escalable intentando estar lo más desacoplado posible, por ello se ha intentado refactorizar lo máximo posible para seguir el principio de responsabilidad única donde cada función realiza una acción determinada y solo esa.
+Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funciones como iniciar sesión, añadir entrenamientos y ver resúmenes. Está construida con **HTML, CSS y JavaScript puro** y sigue la arquitectura **MVC (Modelo-Vista-Controlador)** para un código modular y fácil de mantener y escalable intentando estar lo más desacoplado posible, por ello se ha intentado refactorizar lo máximo posible en mis conocimientos para intentar aplicar el principio de responsabilidad única donde cada función realiza una acción determinada y solo esa.
 
 ## Estructura de Carpetas
-- **models**: Clases que representan las entidades de la base de datos.
-- **controllers**: Contiene la lógica de la aplicación y maneja las solicitudes de las vistas.
+- **models**: Clases que representan las entidades del localStorage (mejor aún si fuese una BBDD).
+- **controllers**: Contiene la lógica de la aplicación y maneja las solicitudes de las vistas, lo entiendo como una especie de endpoints.
 - **views**: Archivos HTML y CSS que conforman la interfaz de usuario.
-- **services**: Gestión de interacciones con `localStorage` para almacenar y recuperar datos.
+- **services**: Gestión de interacciones con localStorage para almacenar y recuperar datos y también el DOM.
 - **utils**: Funciones auxiliares como validaciones.
 
 ## Tecnologías Usadas
@@ -15,6 +15,7 @@ Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funci
 - **CSS**: Estilización de la interfaz de usuario.
 - **JavaScript**: Lógica y control de la aplicación.
 - **localStorage**: Persistencia de datos en el navegador.
+- **Git**: Para el control de versiones.
 
 ## Uso de la Aplicación
 1. **Registro de usuarios**: Añade nuevos usuarios a través de la vista de registro.
