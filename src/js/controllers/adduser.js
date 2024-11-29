@@ -1,52 +1,35 @@
-import { Usuario } from "../models/user.js";
-import { validarCamposVacios, validarCampos, validarNombreUsuario, validarContrasenia } from "../utils/validations.js";
-import { obtenerUsuarioPorClave, almacenarUsuario, verificarUsuarioExistente } from "../services/userstorage.js";
+import { getFormData, resetForm } from '../services/dom/domhandlerregister.js';
+import { saveUser } from '../services/localStorage/userstorage.js';
+import { validateEmptyFields, validateFields, validateUsername, validatePassword } from '../utils/validations.js';
 
-function registrarUsuario(event) {
+// Función para envío del formulario
+function registerUser(event) {
     event.preventDefault();
 
-    const usuario = {
-        nombre: document.getElementById('nombre').value.trim(),
-        correo: document.getElementById('correo').value.trim(),
-        altura: document.getElementById('altura').value.trim(),
-        peso: document.getElementById('peso').value.trim(),
-        edad: document.getElementById('edad').value.trim(),
-        usuario: document.getElementById('usuario').value.trim(),
-        contrasenia: document.getElementById('contrasenia').value.trim(),
-    };
+    const userData = getFormData(event);
 
-    // Validaciones
-    if (!validarCamposVacios(usuario)) return;
-    if (!validarCampos(usuario)) return;
-    if (!validarNombreUsuario(usuario.usuario)) return;
-    if (!validarContrasenia(usuario.contrasenia)) return;
+       // Array para las funciones de validacion y validaciones individuales
+       const validations = [
+        () => validateEmptyFields(userData),
+        () => validateFields(userData),
+        () => validateUsername(userData.username),
+        () => validatePassword(userData.password)
+    ];
 
-    const claveBase = 'usuario_';
-
-    // Verificar si ya existe
-    if (verificarUsuarioExistente(claveBase, usuario.usuario)) {
-        alert("Este usuario ya está registrado.");
-        return;
+    if (validations.some(validate => !validate())) {
+        return; // Detiene la función si alguna validación no es exitosa
     }
 
-    // Crear usuario
-    const usuarioCreado = new Usuario(
-        usuario.nombre,
-        usuario.correo,
-        usuario.altura,
-        usuario.peso,
-        usuario.edad,
-        usuario.usuario,
-        usuario.contrasenia
-    );
-
-    // Almacenar en localStorage
-    almacenarUsuario(claveBase + usuario.usuario, usuarioCreado);
-
-    alert("¡Usuario registrado exitosamente!");
-    console.log('Usuario registrado: ',obtenerUsuarioPorClave); // Para depurar
-    window.location.href = 'login.html';
+    // En caso de registro exitoso guarda el usuario, resetea el formulario y redirige a la pagina de login.
+    try {
+        saveUser(userData);
+        resetForm();
+        window.location.href = 'login.html'; // Redirigir a la página de login
+    } catch (error) {
+        console.error('Error al registrar al usuario:', error);
+        alert('Ocurrió un error. Por favor, intente nuevamente.');
+    }
 }
 
-// Evento de tipo submit
-document.getElementById('registroForm').addEventListener('submit', registrarUsuario);
+// Envento de tipo sumbit para enviar el form 
+document.getElementById('register-form')?.addEventListener('submit', registerUser);

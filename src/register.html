@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -13,45 +13,45 @@
 </head>
 
 <body>
-    <img src="/public/img/pexels-photo-332835.jpeg" alt="Fondo" class="background-image" aria-hidden="true">
+    <img src="/public/img/pexels-photo-332835.jpeg" alt="Background" class="background-image" aria-hidden="true">
 
     <main class="main-container">
-        <section class="form" aria-labelledby="RegisterForm">
-            <form id="registroForm">
-                <h1>Regístrame</h1>
-                <label for="nombre">Nombre completo</label>
-                <input type="text" id="nombre" placeholder="Nombre completo" required minlength="3">
+        <section class="form-section" aria-labelledby="registerForm">
+            <form id="register-form" novalidate>
+                <h1>Sign Up</h1>
+                
+                <label for="fullName">Full Name</label>
+                <input type="text" id="full-name" placeholder="Full Name" required minlength="3">
 
-                <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" placeholder="Correo electrónico" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Email" required>
 
-                <label for="altura">Altura (cm)</label>
-                <input type="number" id="altura" placeholder="Altura (cm)" required>
+                <label for="height">Height (cm)</label>
+                <input type="number" id="height" placeholder="Height (cm)" required>
 
-                <label for="peso">Peso (kg)</label>
-                <input type="number" id="peso" placeholder="Peso (kg)" required>
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" placeholder="Weight (kg)" required>
 
-                <label for="edad">Edad</label>
-                <input type="number" id="edad" placeholder="Edad" required>
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Age" required>
 
-                <label for="usuario">Nombre de Usuario</label>
-                <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
-                <div id="error-usuario" class="error-message"></div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <div id="usernameError" class="error-message"></div>
 
-                <label for="contrasenia">Contraseña</label>
-                <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
-                <div id="error-contrasenia" class="error-message"></div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div id="passwordError" class="error-message"></div>
 
-                <button type="submit">Registrarme</button>
+                <button type="submit">Sign Up</button>
             </form>
         </section>
-
     </main>
 
     <footer class="footer">
         <p>© 2024 My Personal Trainer</p>
     </footer>
-    <script type="module" src="js/controllers/adduser.js"></script>
+    <script type="module" src="js/controllers/addUser.js"></script>
 
 </body>
 

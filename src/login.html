@@ -10,23 +10,22 @@
     <link rel="stylesheet" href="style/base.css">
     <link rel="stylesheet" href="style/layout.css">
     <link rel="stylesheet" href="style/login.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
     <img src="/public/img/pexels-photo-332835.jpeg" alt="Fondo" class="background-image" aria-hidden="true">
 
     <main class="main-container">
         <section class="form" aria-labelledby="section-heading">
-            <form id="loginForm">
+            <form id="login-form">
                 <h1>Iniciar sesión</h1>
 
                 <label for="usuario">Usuario</label>
                 <input type="text" id="usuario" placeholder="Usuario" required aria-describedby="usuarioHelp">
-                <div id="error-nombre-usuario" class="error-message"></div>
+                <div id="error-usuario" class="error-message"></div>
 
-                <label for="contrasenia">Contraseña</label>
-                <input type="password" id="contrasenia" placeholder="Contraseña" aria-describedby="ContraseniaAyuda">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" placeholder="Contraseña" aria-describedby="ContraseniaAyuda">
                 <div id="error-contrasenia" class="error-message"></div>
 
                 <button type="submit">Iniciar sesión</button>
@@ -42,6 +41,6 @@
     </footer>
 
     <script type="module" src="/src/js/controllers/authcontroller.js"></script>
-    <script type="module" src="/src/js/views/loginview.js"></script>
 </body>
+
 </html>

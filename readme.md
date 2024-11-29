@@ -1,7 +1,7 @@
 # README - Aplicación de Gestión de Entrenamientos
 
 ## Descripción
-Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funciones como iniciar sesión, añadir entrenamientos y ver resúmenes. Está construida con **HTML, CSS y JavaScript puro** y sigue la arquitectura **MVC (Modelo-Vista-Controlador)** para un código modular y fácil de mantener y escalable intentando estar lo más desacoplado posible.
+Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funciones como iniciar sesión, añadir entrenamientos y ver resúmenes. Está construida con **HTML, CSS y JavaScript puro** y sigue la arquitectura **MVC (Modelo-Vista-Controlador)** para un código modular y fácil de mantener y escalable intentando estar lo más desacoplado posible, por ello se ha intentado refactorizar lo máximo posible para seguir el principio de responsabilidad única donde cada función realiza una acción determinada y solo esa.
 
 ## Estructura de Carpetas
 - **models**: Clases que representan las entidades de la base de datos.

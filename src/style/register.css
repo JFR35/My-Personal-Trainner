@@ -10,7 +10,37 @@
     width: 100%;
     overflow-x: hidden;
 }
+.form-section {
+    background-color: var(--bg-color-trans);
+    border-radius: var(--btn-border-radius);
+    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.form-section h1 {
+    margin-bottom: 1rem;
+}
 
+.form-section label {
+    display: block;
+    margin-bottom: 0.7rem;
+}
+
+.form-section input {
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-section input:focus {
+    border-color: var(--text-color-dark);
+    outline: none;
+}
 .footer {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 1rem;

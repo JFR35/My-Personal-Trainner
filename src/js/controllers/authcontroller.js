@@ -1,50 +1,45 @@
-import { verificarUsuarioExistente, obtenerUsuarioPorClave } from "../services/userstorage.js";
-import { mostrarMensajeError } from "../utils/validations.js";
+import { obtenerDatosForm } from "../services/dom/domhandlerregister.js";
+import { validarCamposVacios, mostrarMensajeError } from "../utils/validations.js";
 
-function validarCredenciales(event) {
+// Función para mostrar una alerta al iniciar sesión con éxito.
+function mostrarAlert() {
+    alert('Credenciales correctas');
+}
+
+// Función para redirigir al dashboard.
+function redirectToDashboard() {
+    window.location.href = 'dashboard.html';
+}
+
+// Función para comparar las credenciales ingresadas con las guardadas en localStorage.
+function compararContraLocalStorage(event) {
     event.preventDefault();
-    const credenciales = {
-        usuario: document.getElementById('usuario').value.trim(),
-        contrasenia: document.getElementById('contrasenia').value.trim()
-    };
 
-    // Limpiar mensajes de error previos
-    limpiarMensajesError();
+    // Obtener las credenciales del formulario
+    const credenciales = obtenerDatosForm(event);
+    if (!validarCamposVacios(credenciales)) {
+        return;
+    }
 
-    const comprobarContraLocalStorage = localStorage.getItem('usuario_' + credenciales.usuario);
-    if (comprobarContraLocalStorage) {
-        const usuarioParse = JSON.parse(comprobarContraLocalStorage);
-        if (credenciales.contrasenia === usuarioParse.contrasenia && credenciales.usuario === usuarioParse.usuario) {
-            // Redirigir al dashboard si las credenciales son correctas
-            window.location.href = 'dashboard.html';
-        } else {
-            mostrarMensajeError('error-contrasenia', 'Contraseña incorrecta');
-        }
+    // Recuperar los usuarios guardados desde localStorage, o un array vacío si no hay datos
+    const usersaved = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Imprimir en la consola para depuración
+    console.log('Usuarios guardados:', usersaved);
+    console.log('Credenciales ingresadas:', credenciales);
+
+    // Verificar si las credenciales coinciden con algún usuario guardado
+    const credencialesCorrectas = usersaved.some(user => 
+        user.usuario === credenciales.name && user.contrasenia === credenciales.password
+    );
+
+    if (credencialesCorrectas) {
+        mostrarAlert();
+        redirectToDashboard();
     } else {
-        mostrarMensajeError('error-nombre-usuario', 'El usuario no existe.');
+        alert('Credenciales incorrectas');
     }
 }
 
-// Evento submit para inicio de sesión 
-document.getElementById('loginForm').addEventListener('submit', validarCredenciales);
-
-// Función para mostrar errores en el campo correspondiente
-export function mostrarError(idCampoError, mensaje) {
-    console.log(`Mostrando error en "${idCampoError}": ${mensaje}`);
-    const errorElemento = document.getElementById(idCampoError);
-    if (errorElemento) {
-        errorElemento.textContent = mensaje;
-        errorElemento.classList.add('visible');
-    } else {
-        console.error(`Elemento con ID "${idCampoError}" no encontrado.`);
-    }
-}
-
-function limpiarMensajesError() {
-    const mensajesError = document.querySelectorAll('.error-message');
-    console.log('Limpiando mensajes de error');
-    mensajesError.forEach((error) => {
-        error.textContent = '';
-        error.classList.remove('visible');
-    });
-}
+// Cambiar el evento de 'click' a 'submit'
+document.getElementById('login-form').addEventListener('submit', compararContraLocalStorage);
