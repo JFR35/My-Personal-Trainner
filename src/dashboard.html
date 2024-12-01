@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="style/modal.css">
+    <link rel="stylesheet" href="style/styles.css">
+
+    <link rel="stylesheet" href="style/dashboard.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/base.css">
+</head>
+
+<body>
+    <img src="/public/img/pexels-enric-cruz-lopez-6039243.jpg" alt="An imaging of a person walking out"
+        class="background-image">
+
+    <header class="header">
+        <h1>Bienvenido</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="foro.html">Ir al foro</a></li>
+                <li><a href="logout.html">Cerrar sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <main class="grid-container">
+            <!-- Card para mostrar entrenamientos -->
+            <section class="card" role="region" aria-labelledby="card-title-1">
+                <h2 id="card-title-1">Mostrar Entrenamientos</h2>
+                <p>Consulta todos tus entrenamientos</p>
+                <button id="view-trainers">Ver mis entrenamientos</button>
+
+                <div class="training-items" id="viewTrainingItems">
+                    <!-- Aquí se va a renderizar el contenido dinámico -->
+                </div>
+            </section>
+
+            <!-- Card para añadir entrenamientos -->
+            <section class="card" role="region" aria-labelledby="card-title-2">
+                <h2 id="card-title-2">Añadir Entrenamiento</h2>
+                <p>Agrega nuevos entrenamientos rápidamente</p>
+                <button id="add-trainer">Añadir entrenamiento</button>
+                <div class="training-items" id="addTrainingItems">
+                    <!-- Aquí se renderizará el formulario dinámicamente -->
+                </div>
+            </section>
+            <!-- Card para el mejor entrenamiento -->
+            <section class="card" role="region" aria-labelledby="card-title-3">
+                <h2 id="card-title-3">Mejor Entrenamiento</h2>
+                <p>Descubre cuál ha sido tu mejor entrenamiento</p>
+                <button id="best-trainner">Ver mejor entrenamiento</button>
+                <div id="bestTrainner">
+                    <!-- Aquí se va a renderizar el contenido dinámico -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <p>© 2024 My Personal Trainer</p>
+    </footer>
+
+    
+    <script type="module" src="./app/addtrainer.js"></script>
+    <script type="module" src="./app/viewtrainer.js"></script>
+    <script type="module" src="./app/summary.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+/* Estilos para el formulario dinámico */
+#trainingForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#trainingForm label {
+    font-weight: bold;
+}
+
+#trainingForm input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#trainingForm button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#trainingForm button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+}
+
+#trainingForm .close-button {
+    background-color: #f44336;
+    color: white;
+}

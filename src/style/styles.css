@@ -1,0 +1,33 @@
+/* Tabla de entrenamientos */
+#trainingTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+#trainingTable th,
+#trainingTable td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: c;
+}
+
+#trainingTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+
+#trainingTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#trainingTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+@media (min-width: 765){
+    #trainingTable{
+        
+    }
+}
