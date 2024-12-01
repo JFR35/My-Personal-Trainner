@@ -59,7 +59,7 @@
 
 }
 .error-message.visible {
-    display: block; /* Muestra el mensaje cuando tiene la clase 'visible' */
+    display: block; 
 }
 
 @media (max-width: 768px) {

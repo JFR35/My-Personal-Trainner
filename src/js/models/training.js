@@ -6,7 +6,7 @@ export class Training {
         this.comentarios = '';
     }
 
-    
+    // Mapea a JSON
     toJSON() {
         return {
             distancia: this.distancia,
@@ -15,6 +15,7 @@ export class Training {
         };
     }
 
+    // Crea una nueva instancia de la clase a partir de un objeto JSON
     static fromJSON(json) {
         const fecha = new Date(json.fecha);
         if (isNaN(fecha.getTime())) {

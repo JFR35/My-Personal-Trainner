@@ -31,9 +31,8 @@
     color: var(--text-color);
 }
 
-
 .error-message {
-    display: none; /* oculto si no hay error */
+    display: none;
     font-size: 0.9rem;
     font-weight: bold;
     color: red;
@@ -43,7 +42,7 @@
 }
 
 .error-message.visible {
-    display: block; /* Muestra el mensaje cuando tiene la clase 'visible' */
+    display: block; 
 }
 
 

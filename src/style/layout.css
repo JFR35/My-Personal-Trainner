@@ -10,14 +10,6 @@ html {
     font-family: var(--font-family);
     text-align: center;
     color: var(--text-color);
-    /* Interesante ir viendo esto ya que sirve de referencia en el uso
-    de REM O EM en el resto de unidades de medida relativas
-    PX ideal para tamaños fijos(estaticos)
-    % Se adaptan al tamaño del contenedor padre
-    EM Se adapta al tamaño del contenedor padre
-    REM para body y html 
-    font-size: 62.5%; /* Esto hace que 1rem = 10px (16px * 62.5%)
-    */
 }
 
 body {

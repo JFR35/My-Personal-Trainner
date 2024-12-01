@@ -18,11 +18,11 @@ function getBestTraining() {
     });
 }
 
-// Renderizar el mejor entrenamiento
+// Renderizar el mejor entrenamiento llamando a la función getBestTrainning()
 function showBestTraining() {
     const bestTraining = getBestTraining();
 
-    // Si no hay entrenamientos registrados
+    // Si no hay entrenamientos registrados mostrar un parrafo
     if (!bestTraining) {
         bestTrainnerContainer.innerHTML = '<p>No tienes entrenamientos registrados.</p>';
         return;
@@ -36,7 +36,7 @@ function showBestTraining() {
         day: 'numeric',
     });
 
-    // Mostrar el mejor entrenamiento
+    // Mostrar el mejor entrenamiento, se crean parrafos
     bestTrainnerContainer.innerHTML = `
         <div class="best-training">
             <p><strong>Distancia:</strong> ${bestTraining.distancia} km</p>
@@ -46,7 +46,7 @@ function showBestTraining() {
         </div>
     `;
 
-     // Crear el botón de cerrar
+     // Crear el botón de cerrar 
      const closeButton = document.createElement('button');
      closeButton.type = 'button';
      closeButton.textContent = 'Cerrar';
@@ -58,7 +58,8 @@ function showBestTraining() {
  
      // Añadir el botón de cerrar al contenedor
      bestTrainnerContainer.appendChild(closeButton);
- 
+     // Le añado un pequeño margin arriba
+    
     bestTrainnerContainer.style.marginTop = '12%';
 
   

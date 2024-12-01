@@ -2,7 +2,7 @@
 #trainingForm {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0.7rem;
     max-width: 300px;
     margin: 20px auto;
     padding: 20px;
@@ -29,11 +29,13 @@
 }
 
 #trainingForm button[type="submit"] {
+    margin-left: 5%;
     background-color: #4caf50;
     color: white;
 }
 
 #trainingForm .close-button {
+    margin-left: 5%;
     background-color: #f44336;
     color: white;
 }

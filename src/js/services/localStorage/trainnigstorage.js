@@ -12,7 +12,7 @@ export function saveInLocalStorage(training) {
     }
 }
 
-
+// Función ara recuperar los datos 
 export function loadFromLocalStorage() {
     try {
         const data = JSON.parse(localStorage.getItem('trainings')) || [];

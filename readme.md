@@ -9,6 +9,7 @@ Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funci
 - **views**: Archivos HTML y CSS que conforman la interfaz de usuario.
 - **services**: Gestión de interacciones con localStorage para almacenar y recuperar datos y también el DOM.
 - **utils**: Funciones auxiliares como validaciones.
+- **App**: Para el manejo de las acciones en dashboard como añadir entrenamiento, ver entrenamientos y calcular el mejor entrenamiento.
 
 ## Tecnologías Usadas
 - **HTML**: Estructura de la página web.
@@ -21,6 +22,10 @@ Esta aplicación permite gestionar entrenamientos de usuarios, facilitando funci
 1. **Registro de usuarios**: Añade nuevos usuarios a través de la vista de registro.
 2. **Inicio de sesión**: Autentica a los usuarios con la vista de login.
 3. **Gestión de entrenamientos**: Agrega, visualiza y gestiona entrenamientos desde el dashboard.
-4. **Persistencia**: Los datos se almacenan en `localStorage` y se mantienen entre sesiones.
+4. **Persistencia**: Los datos se almacenan en localStorage y se mantienen entre sesiones.
 
 
+## Futuras mejoras
+1. **Manejo de errores**: Añadir página 404 y modales de error en los divs.
+2. **Persistencia**: Fetch API para cargar datos desde una BB.DD.
+3. **Test**: Pruebas unitarias, de integracón y E2E.

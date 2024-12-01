@@ -9,7 +9,6 @@
     padding: var(--container-padding);
 }
 
-/* Grid Layout for Cards */
 .grid-container {
     display: grid;
     gap: 1rem;
