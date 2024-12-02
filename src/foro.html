@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro - My Personal Trainer</title>
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/foro.css">
+</head>
+<body>
+    <img src="/public/img/pexels-enric-cruz-lopez-6039243.jpg" alt="An image of a person walking out" class="background-image">
+    
+    <header class="header" role="banner">
+        <h1>My Personal Trainer</h1>
+    </header> 
+    <main class="grid-container">
+        <section class="comentarios" role="region" aria-labelledby="comentarios">
+            <h2 id="addComment">Añadir comentarios</h2>
+            <p>Consulta todos tus entrenamientos</p>
+            <input type="text" id="commentInput" placeholder="Escribe tu comentario aquí">
+            <button id="addCommentBtn" class="button-primary">Añadir comentario</button>
+
+            <div class="comments-items" id="vieCommentsItems">
+                <!-- Los comentarios se renderizarán aquí -->
+            </div>
+        </section>
+    </main>
+    <footer class="footer" role="contentinfo">
+        <p>© 2024 My Personal Trainer</p>
+    </footer>
+    <script type="module" src="/src/app/foro.js"></script>
+</body>
+</html>

@@ -34,6 +34,7 @@
 }
 
 .navbar li a:hover {
+    cursor: pointer;
     border-radius: 12px;
     background-color: var(--navbar-hover-bg, #494444);
     color: var(--navbar-hover-text);
